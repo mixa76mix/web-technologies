@@ -1,0 +1,102 @@
+:root {
+  --main-color: #111100;
+}
+
+* {
+    font-family: "Calibri", "Arial", Sans-serif, Serif;
+}
+
+html {
+    background: #ffffdd;
+    color: var(--main-color);
+    font-size:  20px;
+}
+
+h1 {
+    font-size:  1.6rem;
+}
+
+h2 {
+    font-size:  1.4rem;
+}
+
+h3 {
+    font-size:  1.2rem;
+}
+
+.important {
+    display: block;
+    position: static;
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    width: calc(90vw - 30px);;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section article {
+    width: 90%;
+}
+
+p {
+    text-indent: 1.5em;
+}
+
+figure {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure > img {
+    border: 3px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 10em;
+}
+
+img + figcaption {
+    display: inline;
+    font-style: italic;
+    font-size:  0.9rem;
+    text-align: center;
+    color: darkblue;
+}
+
+img + figcaption::before {
+  content: "<- ";
+}
+
+a[href] {
+    color: darkblue;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: darkred;
+}
+
+#fold_green {
+    color:green;
+}
+
+table {
+    background: #fff7cc;
+    
+    position: relative;
+    top: 0px; left: 40px;
+}
+
+thead {
+    background: #ffddaa;
+}
+
+::selection {
+    background: #cccc77;
+}
