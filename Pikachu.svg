@@ -7,14 +7,17 @@
    viewBox="0 0 200 250"
    version="1.1"
    id="svg5"
+   class="svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs2">
+     id="defs2"
+     class="defs2">
     <!-- Градиент рта -->
     <linearGradient
-       id="linearGradient4164">
+       id="linearGradient4164"
+       class="ling">
       <stop
          style="stop-color:#ff5050;stop-opacity:1;"
          offset="0"
@@ -26,7 +29,8 @@
     </linearGradient>
     <!-- Градиент левого уха -->
     <linearGradient
-       id="linearGradient4156">
+       id="linearGradient4156"
+       class="ling">
       <stop
          style="stop-color:#ffcc66;stop-opacity:1;"
          offset="0"
@@ -157,4 +161,5 @@
        rx="8"
        ry="13" />
   </g>
+  <script xlink:href="dom.js"></script>
 </svg>
