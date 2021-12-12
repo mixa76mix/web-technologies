@@ -125,12 +125,12 @@ else
 leftear.classList.remove("ear");
 
 // 32.	Переключение класса
-rightear.classList = "rightear";
+rightear.classList.toggle("rightear");
 
 if(rightear.classList.contains("ear"))
-	console.log("rightear has class ear - True")
+	console.log("rightear has class ear - True " + rightear.classList)
 else
-	console.log("rightear has class ear - False")
+	console.log("rightear has class ear - False " + rightear.classList)
 
 // 13.	Установка ID
 leftear.id = "earleft";
