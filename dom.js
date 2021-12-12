@@ -46,34 +46,39 @@ parent_div.insertBefore(new_el, my_div);
 let fragment = document.createDocumentFragment();
 
 // 14.2	Изменение HMTL в текстовом виде
-// 27.	Добавление текстового узла
 let new_el_2 = document.createElement("newdiv2");
 new_el_2.innerText = `<a>text</a> ${newpath}`; // Тег появится без содержимого, т.к. SVG
 
+let new_el_txt = document.createElement("text");
+new_el_txt.innerText = `<text>text</text> ${newpath}`; // Тег тоже появится без содержимого
+
 // 28.	Добавление фрагмента документа
-// 26.	Нормализация содержимого 
 let text1 = document.createElement("text");
-text1.innerHTML = ` text1 &lt;   `;
+text1.innerHTML = ` text1 `;
 fragment.appendChild(text1);
 
 let text2 = document.createElement("text");
-text2.innerHTML = ` text2 &lt;   `;
+text2.innerHTML = ` text2 `;
 fragment.appendChild(text2);
 
-fragment.appendChild(new_el_2); 
+fragment.appendChild(new_el_2);
+fragment.appendChild(new_el_txt);
 my_div.appendChild(fragment);
 
 
 // 26.	Нормализация содержимого 
-// Взял пример из Интернета, но понял как это работает
-var string1 = 'caf\u00E9';
-var string2 = 'cafe\u0301';
+// 27.	Добавление текстового узла
+let newtextel = document.createElement("text");
 
-console.log(string1);
-console.log(string2);
-console.log(string1 === string2);
-console.log(string1.normalize() === string2.normalize());
+newtext = document.createTextNode("txt1");
+newtext2 = document.createTextNode("txt2");
 
+newtextel.appendChild(newtext);
+newtextel.appendChild(newtext2);
+
+my_div.appendChild(newtextel);
+
+newtextel.normalize();
 
 // 25.	Удалить элемент из DOM
 document.getElementById("layer6").remove();
@@ -96,8 +101,19 @@ lefteye.setAttribute("stroke-width", "1px");
 leftear = document.getElementById("path5947-0");
 rightear = document.getElementById("path5947-9");
 
-leftear.setAttribute("class", "ear");
-rightear.setAttribute("class", "ear");
+leftear.classList.add("ear");
+leftear.classList.add("leftear");
+rightear.classList.add("ear");
+rightear.classList.add("rightear");
+// Или то же самое
+// rightear.classList = "ear rightear";
+console.log(rightear.classList);
+
+if(leftear.classList.contains("ear"))
+	console.log("leftear has class ear - True")
+else
+	console.log("leftear has class ear - False")
+
 
 // 12.	Проверка наличия класса
 if (leftear.hasAttribute("class") && rightear.hasAttribute("class"))
@@ -106,13 +122,23 @@ else
 	console.log("path5947-0 and path5947-9 have class ear - False")
 
 // 11.	Удаление класса
-leftear.removeAttribute("class");
+leftear.classList.remove("ear");
 
 // 32.	Переключение класса
-rightear.setAttribute("class", "rightear");
+rightear.classList = "rightear";
+
+if(rightear.classList.contains("ear"))
+	console.log("rightear has class ear - True")
+else
+	console.log("rightear has class ear - False")
 
 // 13.	Установка ID
-leftear.setAttribute("id", "earleft");
+leftear.id = "earleft";
+
+if(leftear.id = "earleft")
+	console.log("leftear has id earleft - True")
+else
+	console.log("leftear has id earleft - False")
 
 // 16.	Переход к предыдущему узлу
 console.log(righteye.previousSibling.nodeName);
@@ -200,9 +226,8 @@ right.onscroll = "";
 
 
 // 38.	Предотвращение стандартного действия
-// В svg я не нашел стандартных действий, поэтому пример не имеет особого смысла
-let left = document.getElementById("layer4");
-left.addEventListener("scroll", 
+let url = document.getElementById("url");
+url.addEventListener("click", 
 	function(event)
 	{
 		event.preventDefault();
@@ -216,6 +241,7 @@ left.addEventListener("scroll",
 // 40.	Немедленное прекращение распространения
 svg.setAttribute("onclick", "console.log(\"click svg0\")");
 
+let left = document.getElementById("layer4");
 left.addEventListener("click", function (event) {
 	console.log("click left");
 	event.stopImmediatePropagation();

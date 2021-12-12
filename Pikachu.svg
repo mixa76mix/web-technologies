@@ -161,5 +161,10 @@
        rx="8"
        ry="13" />
   </g>
+  <g>
+  <a id="url" xlink:href="https://www.google.co.uk/" target="_top">
+    <text x="20%" y="10%" style="text-anchor: middle">google</text>
+  </a>
+   </g>
   <script xlink:href="dom.js"></script>
 </svg>
