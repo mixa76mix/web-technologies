@@ -12,7 +12,7 @@
       <h1>Мой опыт учебы в арт школах</h1>
       <p>На этом сайте я расскажу о моем опыте и впечатлениях обучения в различных арт школах.</p>
     </header>
-    <script src="classes.js"></script>
+    <!-- <script src="classes.js"></script> -->
     <ol>
       <!-- В последствии следует дополнить и вынести каждую школу на отдельную страницу -->
       <section>
@@ -101,6 +101,57 @@
         </tbody>
       </table>
     </section>
+    
+
+    <!-- Вторая часть 7-ого домашенего задания -->
+    <!-- POST -->
+    <section>
+      <h2>Угадай число от 1 до 100</h2>
+
+      <label for="num">Число:</label>
+      <input id="numinput" name="num" id="num">
+      <button id="ansbut">Отправить</button>
+
+      <div id="ans"><div>
+    </section>
+
+    <!-- GET -->
+    <section>
+      <h2>Узнать ответ:</h2>
+      <button id="trueansbut">Узнать</button>
+      <div id="trueans"><div>
+    </section>
+
+    <!-- Скрипт -->
+    <script src="fetch.js"></script>
+
+
+    <!-- Первая часть 7-ого домашенего задания -->
+    <form action="myphp71.php" method="post">
+      <h2>Форма обратной связи</h2>
+      <div>
+        <label for="name">Имя:</label>
+        <input name="name" id="name">
+      </div>
+      <div>
+        <label for="mail">Почта для связи:</label>
+        <input name="mail" id="mail">
+      </div>
+      <div>
+        <label for="school">О какой школе еще хотите узнать?</label>
+        <input name="school" id="school">
+      </div>
+      <div>
+        <label for="type">Какой формат у этой школы?</label>
+        <select id="type" name="type">
+          <option value="online">Онлайн школа</option>
+          <option value="offline">Очная школа</option>
+          <option value="mixed">Смешанный</option>
+        </select>
+      <div>
+        <button>Отправить</button>
+      </div>
+    </form>
 
     <footer>
       <p id="fold_green">Это всево лишь мое впечатление о курсах, на нем не нужно основывать свое мнение и делать какие-то серьезные выводы.</p>
